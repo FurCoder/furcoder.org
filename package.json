@@ -6,6 +6,7 @@
   "author": "JiPai <github@jipai.moe>",
   "license": "MIT",
   "devDependencies": {
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "sass": "^1.17.0"
   }
 }
