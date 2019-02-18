@@ -8,5 +8,9 @@
   "devDependencies": {
     "pug": "^2.0.3",
     "sass": "^1.17.0"
+  },
+  "scripts": {
+    "dev": "parcel sources/index.pug",
+    "build":"parcel build sources/index.pug --out-dir build/ --no-source-maps"
   }
 }
