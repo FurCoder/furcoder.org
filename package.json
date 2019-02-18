@@ -1,0 +1,11 @@
+{
+  "name": "furcoder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:FurCoder/furcoder.org.git",
+  "author": "JiPai <github@jipai.moe>",
+  "license": "MIT",
+  "devDependencies": {
+    "pug": "^2.0.3"
+  }
+}
