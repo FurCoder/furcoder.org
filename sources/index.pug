@@ -5,45 +5,95 @@ html(lang="zh-cn")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         link(href="./stylesheets/common.scss", rel="stylesheet")
-        script(src="./js/vue.js")
-        
-        
         title FurCoder
     body
-        section.index-cover.swiper
-            .slidebar
-                header
-                    span.color-tigeryellow.header-margin-fix FUR
-                    span.color-codeblue CODER
-                main
-                    p
-                        | FurCoder 是一个由毛茸茸组成的IT开发从业者组织，
-                        | 发起人 老兽 于2017年2月1日 成立了相关讨论组。
-                    p
-                        | 今天，Furcoder已经拥有70名成员，其成员技能覆盖了
-                        | web开发/大数据/游戏制作/服务架构/影视特效/客户端开发
-                        | 等大部分场景。
-                nav
-                    button.color-white.bg-color-codeblue 我们是谁
-                    button 联系我们
-        section.project-list
-            h1 我们的项目
-            span PROJECTS
-            .project-row.clear
-                .project-col-6
-                    .project-item
-                        h3 ZeroCaterpillar
-                        span 全能，高效的图片爬虫。
-                .project-col-6
-                    .project-item
-                        h3 COME SOON
-                        span
-        section.members-list
-            h1 我们的成员
-            span MEMBERS
-            .members-row.clear
-                .members-col-4
-                    .members-item
-                        img(src="https://qcloud-cdn-static.lonepixel.cn/furcoder/avatar/snowkylin.jpg", alt="")
-                        h5 SnowKylin
-                        span Wildream负责人，大数据方向。
+        #app
+            section.index-cover.swiper
+                .slidebar
+                    header
+                        span.color-tigeryellow.header-margin-fix FUR
+                        span.color-codeblue CODER
+                    main(v-show="indexMain=='whoweare'")
+                        p
+                            | FurCoder 是一个由Furry爱好者组成的IT开发从业者组织，
+                            | 发起人 老兽 于2017年2月1日 成立了相关讨论组。
+                        p
+                            | 今天，Furcoder已经拥有70名成员，其成员从业领域覆盖了
+                            span.tag 前端开发
+                            span.tag 大数据
+                            span.tag 游戏制作
+                            span.tag 服务架构
+                            span.tag 影视特效
+                            span.tag 客户端开发
+                            span.tag 人工智能
+                            span.tag 嵌入式开发
+                            span.tag 通信研发
+                            | 等大部分IT场景。
+                    main(v-show="indexMain=='contact'")
+                        p
+                            | 如果您想加入我们的群组或想了解更多事项，可以联系
+                            | 老兽(laoshou#furcoder.org)。
+                        p
+                            | 或者在这里找到我们：
+
+                    nav
+                        button.color-white.bg-color-codeblue(v-on:click="indexMain='whoweare'") 我们是谁
+                        button(v-on:click="indexMain='contact'") 联系我们
+            section.project-list
+                h1 我们的项目
+                span PROJECTS
+                .project-row.clear
+                    .project-col-6
+                        a.project-item(href="https://github.com/FurCoder/ZeroCaterpillar")
+                            h3 ZeroCaterpillar
+                            span 全能，高效的图片爬虫。
+                    .project-col-6
+                        a.project-item(href="https://github.com/FurCoder/wilddream-mobile")
+                            h3 Wilddream-Mobile APP
+                            span Wilddream 官方Android应用实现。
+
+            section.members-list
+                h1 我们的成员
+                span MEMBERS
+                .members-row.clear
+                    -
+                        var obj =[
+                        {
+                            avatar:"https://qcloud-cdn-static.lonepixel.cn/furcoder/avatar/mk124.jpg",
+                            name:"mk124",
+                            des:"FurCoder创始人，就职于上海腾讯，从事游戏开发。"
+                        },
+                        {
+                            avatar:"https://qcloud-cdn-static.lonepixel.cn/furcoder/avatar/snowkylin.jpg",
+                            name:"SnowKylin",
+                            des:"WildDream社区创始人，人工智能从业者。"
+                        },
+                        {
+                            avatar:"https://qcloud-cdn-static.lonepixel.cn/furcoder/avatar/zizi.jpg",
+                            name:"ZiZi",
+                            des:"就职于深圳腾讯，从事游戏开发。"
+                        },
+                        {
+                            avatar:"https://qcloud-cdn-static.lonepixel.cn/furcoder/avatar/voidwolf.jpg",
+                            name:"VoidWolf",
+                            des:"前端工程师，魔法师。"
+                        },
+                        {
+                            avatar:"https://qcloud-cdn-static.lonepixel.cn/furcoder/avatar/zoharwolf.jpg",
+                            name:"Zoharwolf",
+                            des:"独立游戏开发者。"
+                        }
+                        ];
+                    each val in obj
+                        .members-col-4
+                            .members-item
+                                img(src=val.avatar)
+                                h5=val.name
+                                span=val.des
+            section
+                footer
+                    p "Everything is code here."
+                    p CopyRight FurCoder.org 2017-2019
+
+    script(src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.min.js")
+    script(src="./js/vue.js")
