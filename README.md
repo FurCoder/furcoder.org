@@ -22,21 +22,21 @@
 
     yarn dev
 
-来启动parcel的build+watch服务，成功启动后默认会开启localhost:1234作为项目地址。您的任何修改都会立刻更新到页面上，当然，偶尔parcel会出bug，重启一下parcel就好。
+来启动parcel的build+watch服务。如果系统找不到parcel，可以全局安装（`yarn global add parcel-bundler`）。成功启动后默认会开启`localhost:1234`作为项目地址。您的任何修改都会立刻更新到页面上，当然，偶尔parcel会出bug，重启一下parcel就好。
 
 当您准备发布一次完整的项目构建时，终止dev，输入
 
     yarn build
 
-这一命令会在项目根的build目录下输出完整构建，注意，每次构建前请先清空该目录。
+这一命令会在项目根的`build`目录下输出完整构建，注意，每次构建前请先清空该目录。
 
 ## 自定义脚本
 
-如果您非常精通Parcel，请直接编辑package.json里的script部分。
+如果您非常精通Parcel，请直接编辑`package.json`里的`script`部分。
 
 ## 事倍功半
 
-推荐安装以下VS CODE 插件获得最佳体验：
+推荐安装以下VS CODE插件获得最佳体验：
 
 - Pug beautify
 - Pug (Jade) snippets
