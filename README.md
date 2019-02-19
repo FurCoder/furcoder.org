@@ -1,37 +1,43 @@
-## Welcome to GitHub Pages
+# 源码食用教程
 
-You can use the [editor on GitHub](https://github.com/FurCoder/furcoder.org/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+本工程由以下工具链组成：
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+- 打包工具[Parcel](https://parceljs.org/)
+- HTML模板引擎[PUG](https://pugjs.org/api/getting-started.html)
+- SCSS增强型CSS语法
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+运行本工程请确保您已安装Nodejs环境，以下命令以Yarn为例。
 
-```markdown
-Syntax highlighted code block
+## 首次安装
 
-# Header 1
-## Header 2
-### Header 3
+下载工程源码后，在终端中切换到对应目录，输入
 
-- Bulleted
-- List
+    yarn
+来安装项目依赖，注意，如果没有修改过npm仓库地址，您的安装速度可能会极为缓慢，甚至失败，这一切都取决您的网络质量。
 
-1. Numbered
-2. List
+## 运行&编译
 
-**Bold** and _Italic_ and `Code` text
+依赖安装成功后，在终端内输入
 
-[Link](url) and ![Image](src)
-```
+    yarn dev
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+来启动parcel的build+watch服务，成功启动后默认会开启localhost:1234作为项目地址。您的任何修改都会立刻更新到页面上，当然，偶尔parcel会出bug，重启一下parcel就好。
 
-### Jekyll Themes
+当您准备发布一次完整的项目构建时，终止dev，输入
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/FurCoder/furcoder.org/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+    yarn build
 
-### Support or Contact
+这一命令会在项目根的build目录下输出完整构建，注意，每次构建前请先清空该目录。
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## 自定义脚本
+
+如果您非常精通Parcel，请直接编辑package.json里的script部分。
+
+## 事倍功半
+
+推荐安装以下VS CODE 插件获得最佳体验：
+
+- Pug beautify
+- Pug (Jade) snippets
+
