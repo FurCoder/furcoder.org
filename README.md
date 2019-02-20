@@ -34,7 +34,7 @@
 
 如果您非常精通Parcel，请直接编辑package.json里的script部分。
 
-## 事倍功半
+## 事半功倍
 
 推荐安装以下VS CODE 插件获得最佳体验：
 
