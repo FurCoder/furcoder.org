@@ -9,13 +9,13 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --colors-dove-gray: #727272;
-  --colors-danube: #569acb;
+  --colors-danube: #ff8642;
+  --colors-danube-light: #ffa26d;
   background-color: #fafafa;
   background-size: 10px 10px;
-  background-image:
-    linear-gradient(to right, #569acb28 1px, transparent 1px),
+  background-image: linear-gradient(to right, #569acb28 1px, transparent 1px),
     linear-gradient(to bottom, #569acb28 1px, transparent 1px);
-    background-attachment: fixed;
+  background-attachment: fixed;
 }
 
 a {

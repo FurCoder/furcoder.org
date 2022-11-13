@@ -1,19 +1,16 @@
 import { theme } from "@/styles/theme";
 import { css } from "@emotion/react";
-import Image from "next/image";
-import Script from "next/script";
-import dracula from "prism-react-renderer/themes/github";
-import Highlight, { defaultProps } from "prism-react-renderer";
 import { FaGithubAlt } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 
 const ThumbnailHeaderStyle = css({
-  height: 300,
+  height: 400,
   borderRadius: 20,
   backgroundColor: "white",
   display: "flex",
   alignItems: "center",
   overflow: "hidden",
+  position: "relative",
 });
 
 const h1Style = css({
@@ -21,28 +18,21 @@ const h1Style = css({
   fontSize: 50,
   fontWeight: "bold",
   color: theme.colors.danube,
+  span: {
+    display: "block",
+  },
+  ">span:first-child": { fontSize: 42 },
+  ">span:last-child": {
+    fontSize: 100,
+  },
 });
 
-const sloganStyle = css({
-  fontSize: 14,
-  whiteSpace: "pre-wrap",
-  color: theme.colors.danube,
-});
-const exampleCode = `
-  <title>FurCoder | Everything is code here</title>
-  <meta name="description" content="是兽人控，也是普通人。爱生活，也爱写代码。我不接受被定义，我为自己带盐。"
-  />
-`;
 const ThumbnailHeader = () => {
   return (
     <div css={ThumbnailHeaderStyle}>
       <div
         css={css`
-          clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 0% 100%);
-          &:hover {
-            clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 0% 100%);
-          }
-          width: 60%;
+          width: 100%;
           height: 100%;
         `}
       >
@@ -59,26 +49,28 @@ const ThumbnailHeader = () => {
             }
           `}
         />
-        {/* <Image
-          alt="header-swiper"
-          src="https://qcloud-cdn-static.lonepixel.cn/furcoder/swiper.jpg"
-          width={750}
-          height={300}
-          css={css`
-            transition: all 0.2s;
-            &:hover {
-              transform: scale(1.2);
-            }
-          `}
-        /> */}
       </div>
 
-      <div css={css({ width: "40%", paddingRight: 20, textAlign: "right" })}>
+      <div
+        css={css({
+          position: "absolute",
+          textAlign: "right",
+          display: "flex",
+          alignItems:'end',
+          justifyContent: "space-between",
+          flexDirection: "column",
+          height: "100%",
+          right: 0,
+          padding: 20,
+        })}
+      >
         <div
           css={css({
             backgroundColor: theme.colors.danube,
             borderRadius: 999,
             display: "inline-block",
+            marginBottom: 20,
+            width: "fit-content",
           })}
         >
           <div css={css({ display: "flex", alignItems: "center" })}>
@@ -108,34 +100,10 @@ const ThumbnailHeader = () => {
             </a>
           </div>
         </div>
-        <h1 css={h1Style}>FURRY CODER</h1>
-        <Highlight
-          {...defaultProps}
-          code={exampleCode}
-          language="jsx"
-          theme={dracula}
-        >
-          {({ className, style, tokens, getLineProps, getTokenProps }) => (
-            <pre
-              className={className}
-              style={style}
-              css={css({
-                whiteSpace: "pre-wrap",
-                textAlign: "left",
-                marginRight: "-10%",
-                width: "110%",
-              })}
-            >
-              {tokens.map((line, i) => (
-                <div key={i} {...getLineProps({ line, key: i })}>
-                  {line.map((token, key) => (
-                    <span key={key} {...getTokenProps({ token, key })} />
-                  ))}
-                </div>
-              ))}
-            </pre>
-          )}
-        </Highlight>
+        <h1 css={h1Style}>
+          <span>FURRY</span>
+          <span>CODER</span>
+        </h1>
       </div>
     </div>
   );

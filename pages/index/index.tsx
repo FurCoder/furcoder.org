@@ -9,14 +9,15 @@ import members from "@/assets/members.json";
 import projects from "@/assets/projects.json";
 import ProjectCard from "./ProjectCard";
 import Script from "next/script";
+import { theme } from "@/styles/theme";
 
 const sectionTitleStyle = css({
-  backgroundColor: "#D9D9D9",
-  padding: "10px 20px",
+  backgroundColor: "white",
+  padding: "10px 40px",
   borderRadius: 999,
-  fontSize: 16,
+  fontSize: 22,
   fontWeight: "bold",
-  color: "white",
+  color: theme.colors["dove-gray"],
 });
 
 const sectionContainerStyle = css({
@@ -45,14 +46,13 @@ const Home: NextPage = (props) => {
         />
         <meta property="og:url" content="https://www.furcoder.org/" />
         <link rel="icon" href="/favicon.ico" />
-  
       </Head>
       <Script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" />
       <main
         css={css({
           maxWidth: 1200,
           margin: "0 auto",
-          marginTop: 100,
+          marginTop: 50,
         })}
       >
         <ThumbnailHeader />
@@ -77,6 +77,7 @@ const Home: NextPage = (props) => {
                 des={project.des}
                 img={project.img}
                 url={project.url}
+                status={project.status as any}
               />
             ))}
           </div>
@@ -123,7 +124,7 @@ export async function getStaticProps() {
   return {
     props: {
       members,
-      projects
+      projects,
     },
   };
 }
