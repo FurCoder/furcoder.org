@@ -11,7 +11,7 @@ const ThumbnailHeaderStyle = css({
   alignItems: "center",
   overflow: "hidden",
   position: "relative",
-  "@media (max-width:425px)": {
+  "@media (max-width:900px)": {
     borderTopLeftRadius: 0,
     borderTopRightRadius: 0,
   },

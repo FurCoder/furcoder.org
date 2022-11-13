@@ -59,14 +59,14 @@ const Home: NextPage<{
           maxWidth: 1200,
           margin: "0 auto",
           marginTop: 50,
-          "@media (max-width: 425px)": {
+          "@media (max-width: 900px)": {
             marginTop: 0,
           },
         })}
       >
         <ThumbnailHeader />
 
-        <section css={css({ margin: "50px 0" })}>
+        <section css={css({ margin: "50px 20px" })}>
           <h2 css={sectionContainerStyle}>
             <span css={sectionTitleStyle}>鸽子项目</span>
           </h2>
@@ -96,7 +96,7 @@ const Home: NextPage<{
           </div>
         </section>
 
-        <section css={css({ margin: "50px 0" })}>
+        <section css={css({ margin: "50px 20px" })}>
           <h2 css={sectionContainerStyle}>
             <span css={sectionTitleStyle}>摸鱼成员</span>
           </h2>
@@ -106,10 +106,11 @@ const Home: NextPage<{
               gridTemplateColumns: "repeat(3,1fr)",
               columnGap: 20,
               rowGap: 20,
-              "@media (max-width:425px)": {
+              "@media (max-width:550px)": {
                 gridTemplateColumns: "repeat(1,1fr)",
-                marginLeft: 20,
-                marginRight: 20,
+              },
+              "@media (min-width:550px) and (max-width:900px)": {
+                gridTemplateColumns: "repeat(2,1fr)",
               },
             })}
           >

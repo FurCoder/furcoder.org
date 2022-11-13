@@ -26,7 +26,11 @@ const MemberCard = ({
         padding: "30px 20px",
       })}
     >
-      <div>
+      <div
+        css={css({
+          maxWidth: "calc(100% - 100px)",
+        })}
+      >
         <h3
           css={css({
             margin: 0,
