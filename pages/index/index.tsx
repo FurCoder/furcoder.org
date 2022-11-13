@@ -59,6 +59,9 @@ const Home: NextPage<{
           maxWidth: 1200,
           margin: "0 auto",
           marginTop: 50,
+          "@media (max-width: 425px)": {
+            marginTop: 0,
+          },
         })}
       >
         <ThumbnailHeader />
@@ -73,6 +76,11 @@ const Home: NextPage<{
               gridTemplateColumns: "repeat(1,1fr)",
               columnGap: 20,
               rowGap: 20,
+              "@media (max-width:425px)": {
+                gridTemplateColumns: "repeat(1,1fr)",
+                marginLeft: 20,
+                marginRight: 20,
+              },
             })}
           >
             {staticProjects?.map((project) => (
@@ -98,6 +106,11 @@ const Home: NextPage<{
               gridTemplateColumns: "repeat(3,1fr)",
               columnGap: 20,
               rowGap: 20,
+              "@media (max-width:425px)": {
+                gridTemplateColumns: "repeat(1,1fr)",
+                marginLeft: 20,
+                marginRight: 20,
+              },
             })}
           >
             {staticMembers?.map((member) => (

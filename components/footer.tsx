@@ -8,6 +8,12 @@ const footerStyle = css({
   alignItems: "center",
   justifyContent: "space-between",
   borderRadius: "20px 20px 0px 0px",
+  "@media (max-width:425px)": {
+    flexDirection: "column",
+    ">span:first-child": {
+      marginBottom: 10,
+    },
+  },
 });
 
 const footerSpanStyle = css({

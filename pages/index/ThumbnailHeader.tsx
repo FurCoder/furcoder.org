@@ -11,6 +11,10 @@ const ThumbnailHeaderStyle = css({
   alignItems: "center",
   overflow: "hidden",
   position: "relative",
+  "@media (max-width:425px)": {
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 0,
+  },
 });
 
 const h1Style = css({
@@ -56,7 +60,7 @@ const ThumbnailHeader = () => {
           position: "absolute",
           textAlign: "right",
           display: "flex",
-          alignItems:'end',
+          alignItems: "end",
           justifyContent: "space-between",
           flexDirection: "column",
           height: "100%",
@@ -82,7 +86,13 @@ const ThumbnailHeader = () => {
             >
               <FaGithubAlt
                 fill="white"
-                css={css({ margin: "5px 10px" })}
+                css={css({
+                  margin: "5px 10px",
+                  transition: "all 0.2s",
+                  ":hover": {
+                    transform: "scale(0.8)",
+                  },
+                })}
                 size="26"
               />
             </a>
@@ -94,7 +104,13 @@ const ThumbnailHeader = () => {
             >
               <FiMail
                 color="white"
-                css={css({ margin: "5px 10px" })}
+                css={css({
+                  margin: "5px 10px",
+                  transition: "all 0.2s",
+                  ":hover": {
+                    transform: "scale(0.8)",
+                  },
+                })}
                 size="26"
               />
             </a>

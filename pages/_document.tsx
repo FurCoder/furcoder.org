@@ -20,10 +20,6 @@ class MyDocument extends Document {
     return (
       <Html lang="zh-CN">
         <Head>
-          <link
-            rel="stylesheet"
-            href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css"
-          ></link>
         </Head>
         <body>
           <Main />
