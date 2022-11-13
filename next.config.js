@@ -6,8 +6,9 @@ const nextConfig = {
     forceSwcTransforms: true,
   },
   images: {
-    domains: ['qcloud-cdn-static.lonepixel.cn'],
+    domains: ["qcloud-cdn-static.lonepixel.cn"],
+    unoptimized: true,
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
