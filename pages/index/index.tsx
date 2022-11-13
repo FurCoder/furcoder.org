@@ -1,7 +1,6 @@
 import { Footer } from "@/components/footer";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import ThumbnailHeader from "@/pages/index/ThumbnailHeader";
 import { css } from "@emotion/react";
 import MemberCard from "./MemberCard";
@@ -25,7 +24,14 @@ const sectionContainerStyle = css({
   justifyContent: "center",
 });
 
-const Home: NextPage = (props) => {
+const Home: NextPage<{
+  staticMembers: typeof members;
+  staticProjects: typeof projects;
+}> = (props: {
+  staticMembers: typeof members;
+  staticProjects: typeof projects;
+}) => {
+  const { staticMembers, staticProjects } = props;
   return (
     <div>
       <Head>
@@ -65,12 +71,11 @@ const Home: NextPage = (props) => {
             css={css({
               display: "grid",
               gridTemplateColumns: "repeat(1,1fr)",
-              // gridTemplateRows: "25% 25% 25% 25%",
               columnGap: 20,
               rowGap: 20,
             })}
           >
-            {projects.map((project) => (
+            {staticProjects?.map((project) => (
               <ProjectCard
                 key={project.name}
                 name={project.name}
@@ -91,12 +96,11 @@ const Home: NextPage = (props) => {
             css={css({
               display: "grid",
               gridTemplateColumns: "repeat(3,1fr)",
-              // gridTemplateRows: "25% 25% 25% 25%",
               columnGap: 20,
               rowGap: 20,
             })}
           >
-            {members.map((member) => (
+            {staticMembers?.map((member) => (
               <MemberCard
                 key={member.name}
                 name={member.name}
@@ -115,18 +119,5 @@ const Home: NextPage = (props) => {
     </div>
   );
 };
-
-export async function getStaticProps() {
-  // Get external data from the file system, API, DB, etc.
-
-  // The value of the `props` key will be
-  //  passed to the `Home` component
-  return {
-    props: {
-      members,
-      projects,
-    },
-  };
-}
 
 export default Home;

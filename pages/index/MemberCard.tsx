@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const MemberCard = ({
   name,
-  tech,
+  tech = [],
   des,
   avatar,
 }: {
@@ -61,8 +61,6 @@ const MemberCard = ({
           borderRadius: 999,
           width: 100,
           height: 100,
-          // clipPath:
-          //   "polygon(0% 25%, 50% 0%, 100% 25%, 100% 85%,50% 100%,0% 85%)",
         })}
       >
         <Image
