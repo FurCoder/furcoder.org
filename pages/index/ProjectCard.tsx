@@ -49,6 +49,7 @@ const ProjectCard = ({
         <h3
           css={css({
             margin: 0,
+            marginBottom: 10,
             fontSize: 18,
             color: "#6F7A6E",
             display: "flex",

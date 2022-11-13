@@ -1,3 +1,4 @@
+import { theme } from "@/styles/theme";
 import { css } from "@emotion/react";
 import Image from "next/image";
 
@@ -19,6 +20,7 @@ const MemberCard = ({
         alignItems: "center",
         justifyContent: "space-between",
         backgroundColor: "#FFA26D",
+        background: `linear-gradient(to bottom right,${theme.colors["danube-light"]}, ${theme.colors.danube})`,
         borderRadius: 10,
         filter: "drop-shadow(2px 2px 2px rgba(103, 103, 103, 0.1))",
         padding: "30px 20px",
