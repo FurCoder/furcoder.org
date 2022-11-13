@@ -1,0 +1,27 @@
+[
+  {
+    "name": "mk124",
+    "des": "",
+    "bgColor": "",
+    "tech": ["Game Engine Developer"],
+    "avatar": "https://qcloud-cdn-static.lonepixel.cn/furcoder/avatar/mk124.jpg"
+  },
+  {
+    "name": "SnowKylin",
+    "des": "Wildream.com站长,《深入浅出机器学习》作者",
+    "tech": ["AI", "Machine Learning"],
+    "avatar": "https://qcloud-cdn-static.lonepixel.cn/furcoder/avatar/snowkylin.jpg"
+  },
+  {
+    "name": "VoidWolf",
+    "des": "",
+    "tech": ["FrontEnd", "Coffee", "DIY", "True Music"],
+    "avatar": "https://qcloud-cdn-static.lonepixel.cn/furcoder/avatar/voidwolf.jpg"
+  },
+  {
+    "name": "Zoharwolf",
+    "des": "",
+    "tech": ["Indie Game Developer"],
+    "avatar": "https://qcloud-cdn-static.lonepixel.cn/furcoder/avatar/zoharwolf.jpg"
+  }
+]

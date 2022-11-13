@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --colors-dove-gray: #727272;
+  --colors-danube: #569acb;
+  background-color: #fafafa;
+  background-size: 10px 10px;
+  background-image:
+    linear-gradient(to right, #569acb28 1px, transparent 1px),
+    linear-gradient(to bottom, #569acb28 1px, transparent 1px);
+    background-attachment: fixed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+    --colors-dove-gray: #727272;
+    --colors-danube: #569acb;
+  }
+}
