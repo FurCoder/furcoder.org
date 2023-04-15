@@ -2,7 +2,6 @@
   {
     "name": "mk124",
     "des": "",
-    "bgColor": "",
     "tech": ["Game Engine Developer"],
     "avatar": "https://qcloud-cdn-static.lonepixel.cn/furcoder/avatar/mk124.jpg"
   },
@@ -15,7 +14,7 @@
   {
     "name": "VoidWolf",
     "des": "",
-    "tech": ["FrontEnd", "Coffee", "DIY", "True Music"],
+    "tech": ["Web Develop", "Coffee", "DIY", "True Music"],
     "avatar": "https://qcloud-cdn-static.lonepixel.cn/furcoder/avatar/voidwolf.jpg"
   },
   {
@@ -23,5 +22,25 @@
     "des": "",
     "tech": ["Indie Game Developer"],
     "avatar": "https://qcloud-cdn-static.lonepixel.cn/furcoder/avatar/zoharwolf.jpg"
+  },
+  {
+    "name": "PaiJi",
+    "des": "",
+    "tech": ["Web Develop"]
+  },
+  {
+    "name": "AlphaGoMK",
+    "des": "",
+    "tech": ["AI"]
+  },
+  {
+    "name": "AnalogDragon",
+    "des": "",
+    "tech": ["EE"]
+  },
+  {
+    "name": "HeskeyBaozi",
+    "des": "",
+    "tech": ["Web Develop"]
   }
 ]

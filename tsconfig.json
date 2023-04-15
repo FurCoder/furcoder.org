@@ -27,6 +27,7 @@
       "@/pages/*": ["pages/*"],
       "@/public/*": ["public/*"],
       "@/assets/*": ["assets/*"],
+      "@/types/*": ["types/*"],
     }
   },
   "include": [

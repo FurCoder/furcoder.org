@@ -18,7 +18,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="zh-CN">
+      <Html lang="zh-Hans">
         <Head>
         </Head>
         <body>

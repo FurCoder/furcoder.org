@@ -1,26 +1,42 @@
 import { theme } from "@/styles/theme";
 import { css } from "@emotion/react";
 import Image from "next/image";
+import { FastAverageColor } from "fast-average-color";
+import { useEffect, useMemo, useState } from "react";
+
+const fac = new FastAverageColor();
 
 const MemberCard = ({
+  url,
   name,
   tech = [],
   des,
   avatar,
 }: {
+  url?: string;
   name: string;
   tech: string[];
   des: string;
   avatar: string;
 }) => {
+  const [cardBgcolor, setCardBgcolor] = useState("#FFA26D");
+
+  useEffect(() => {
+    fac.getColorAsync(avatar).then((color) => {
+      setCardBgcolor(color.hexa);
+    });
+  }, [avatar]);
+
   return (
-    <div
+    <a
+      href={url}
       css={css({
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        backgroundColor: "#FFA26D",
-        background: `linear-gradient(to bottom right,${theme.colors["danube-light"]}, ${theme.colors.danube})`,
+        backgroundColor: cardBgcolor,
+        background: `linear-gradient(to right,${cardBgcolor}))`,
+        // background: `linear-gradient(to bottom right,${theme.colors["danube-light"]}, ${theme.colors.danube})`,
         borderRadius: 10,
         filter: "drop-shadow(2px 2px 2px rgba(103, 103, 103, 0.1))",
         padding: "30px 20px",
@@ -28,7 +44,7 @@ const MemberCard = ({
     >
       <div
         css={css({
-          maxWidth: "calc(100% - 100px)",
+          marginRight: 20,
         })}
       >
         <h3
@@ -52,7 +68,7 @@ const MemberCard = ({
         </span>
         <p
           css={css({
-            margin: 0,
+            marginTop: 10,
             color: "white",
             fontSize: 12,
           })}
@@ -63,10 +79,11 @@ const MemberCard = ({
       <div
         css={css({
           overflow: "hidden",
-          border: "solid 3px white",
+          outline: "solid 3px white",
           borderRadius: 999,
           width: 100,
           height: 100,
+          flexShrink: 0,
         })}
       >
         <Image
@@ -79,7 +96,7 @@ const MemberCard = ({
           })}
         />
       </div>
-    </div>
+    </a>
   );
 };
 export default MemberCard;

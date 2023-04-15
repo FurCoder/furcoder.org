@@ -1,5 +1,5 @@
 import { css, SerializedStyles } from "@emotion/react";
-import { theme } from "../styles/theme";
+import { theme } from "@/styles/theme";
 
 const footerStyle = css({
   padding: "30px",
@@ -19,6 +19,7 @@ const footerStyle = css({
 const footerSpanStyle = css({
   color: theme.colors["dove-gray"],
   fontSize: 12,
+  cursor:"n-resize"
 });
 
 const halfBgSpanStyle = css({
@@ -49,7 +50,9 @@ export const Footer = (props: { className?: SerializedStyles }) => {
       <span css={footerSpanStyle}>
         Build with <span css={halfBgSpanStyle}>love and ramen.</span>
       </span>
-      <span css={footerSpanStyle}>CopyRight 2017 - 2022 FurCoder.org</span>
+      <span css={footerSpanStyle}>
+        CopyRight 2017 - {new Date().getFullYear()} FurCoder.org
+      </span>
     </footer>
   );
 };
